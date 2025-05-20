@@ -7,7 +7,7 @@ client = MongoClient(uri)
 
 # Select database and collection
 db = client["CatSalutCDR"]
-collection = db["finalSearchLaboratory"]
+collection = db["finalSearch"]
 
 # Define the aggregation pipeline
 pipeline = [
