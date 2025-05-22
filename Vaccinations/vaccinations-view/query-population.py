@@ -26,7 +26,7 @@ pipeline = [
                                         {"equals": {"path": "sn.d.T", "value": "A"}},
                                         {"equals": {"path": "sn.d.ani", "value": 13}},
                                         {"equals": {"path": "sn.a", "value": 11}},
-                                        {"equals": {"path": "sn.a", "value": 12}},  # ⚠️ se sobrescribe
+                                        {"equals": {"path": "sn.a", "value": 12}},  
                                         {"range": {
                                             "path": "sn.d.time.v",
                                             "gte": datetime.fromisoformat("2000-04-13T07:54:16.345000"),
