@@ -57,6 +57,13 @@ def get_connection():
     # MongoDB Atlas connection URI
     uri = "mongodb+srv://carlosalonso:admin1234@basicinitialtests.0asff.mongodb.net/?retryWrites=true&w=majority&appName=BasicInitialTests"
     client = MongoClient(uri)
+    # force the connection to be established
+    try:
+        client.admin.command('ping')
+    except Exception as e:
+        logger.error(f"Failed to connect to MongoDB: {e}")
+        raise
+
     return client
 
 def execute_query(ns, query):
