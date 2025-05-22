@@ -6,7 +6,7 @@ from datetime import datetime
 pipeline = [
     {
         "$search": {
-            "index": "commonIndex",
+            "index": "commonIndex-4p",
             "returnStoredSource": True,
             "compound": {
                 "filter": [
