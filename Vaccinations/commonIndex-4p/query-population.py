@@ -26,7 +26,6 @@ pipeline = [
                                     "filter": [
                                         {"equals": {"path": "sn.d.T", "value": "A"}},
                                         {"equals": {"path": "sn.d.ani", "value": 13}},
-                                        # ⚠️ usar 'in' en lugar de múltiples 'equals' para sn.a
                                         {"in": {"path": "sn.a", "value": [11, 12]}},
                                         {"range": {
                                             "path": "sn.d.time.v",
@@ -46,7 +45,6 @@ pipeline = [
                                 "compound": {
                                     "filter": [
                                         {"equals": {"path": "sn.d.ani", "value": 140000}},
-                                        # ⚠️ combinar todos los valores de sn.a en una sola expresión
                                         {"in": {"path": "sn.a", "value": [70000, 3, 11]}},
                                         {"equals": {"path": "sn.d.v.df.cs", "value": "E08001460"}}
                                     ]
