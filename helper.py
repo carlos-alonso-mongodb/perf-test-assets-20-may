@@ -41,6 +41,11 @@ logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
 client = None
+
+def get_logger():
+    global logger
+    return logger
+
 def JSONEncoder(obj):
     """Custom JSON encoder for MongoDB ObjectId."""
     if isinstance(obj, ObjectId):
