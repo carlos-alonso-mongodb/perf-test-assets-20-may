@@ -1,14 +1,6 @@
 import time
-from pymongo import MongoClient
+from helper import execute_aggregation
 from datetime import datetime
-
-# MongoDB Atlas connection URI
-uri = "mongodb+srv://carlosalonso:admin1234@basicinitialtests.0asff.mongodb.net/?retryWrites=true&w=majority&appName=BasicInitialTests"
-client = MongoClient(uri)
-
-# Seleccionar base de datos y colección
-db = client["CatSalutCDR"]
-collection = db["finalSearch"]
 
 # Definir pipeline de agregación
 pipeline = [
@@ -106,11 +98,4 @@ pipeline = [
     {"$limit": 100}
 ]
 
-# Ejecutar y cronometrar la consulta
-start_time = time.time()
-results = list(collection.aggregate(pipeline))
-elapsed_time = time.time() - start_time
-
-# Mostrar resultados
-print(f"Se obtuvieron {len(results)} documentos")
-print(f"La consulta tomó {elapsed_time:.2f} segundos")
+execute_aggregation("CatSalutCDR.finalSearch", pipeline)

@@ -1,0 +1,8 @@
+python -m Laboratory.query-ehrId
+python -m Laboratory.commonIndex-4p.query-population-15480Results
+python -m Laboratory.commonIndex-4p.queryPopulation-1result
+python -m Laboratory.laboratory-view.query-population-15480Results
+python -m Laboratory.laboratory-view.queryPopulation-1result
+python -m Vaccinations.commonIndex-4p.query-population
+python -m Vaccinations.vaccinations-view.query-population
+python -m Vaccinations.query-ehrId

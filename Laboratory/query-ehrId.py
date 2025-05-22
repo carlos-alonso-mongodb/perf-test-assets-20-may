@@ -1,13 +1,4 @@
-import time
-from pymongo import MongoClient
-
-# Connect to MongoDB Atlas
-uri = "mongodb+srv://carlosalonso:admin1234@basicinitialtests.0asff.mongodb.net/?retryWrites=true&w=majority&appName=BasicInitialTests"
-client = MongoClient(uri)
-
-# Access the database and collection
-db = client["CatSalutCDR"]
-collection = db["finalCompositions"]
+from helper import execute_query
 
 # Build the query
 query = {
@@ -57,11 +48,5 @@ query = {
     }
 }
 
-# Execute and time the query
-start_time = time.time()
-results = list(collection.find(query))
-end_time = time.time()
+execute_query("CatSalutCDR.finalCompositions", query)
 
-# Output result and timing
-print(f"Found {len(results)} documents")
-print(f"Query took {end_time - start_time:.2f} seconds")

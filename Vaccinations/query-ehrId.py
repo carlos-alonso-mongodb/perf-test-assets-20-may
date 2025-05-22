@@ -1,14 +1,5 @@
-import time
-from pymongo import MongoClient
 from datetime import datetime
-
-# Conexión a MongoDB Atlas
-uri = "mongodb+srv://carlosalonso:admin1234@basicinitialtests.0asff.mongodb.net/?retryWrites=true&w=majority&appName=BasicInitialTests"
-client = MongoClient(uri)
-
-# Seleccionar la base de datos y colección
-db = client["CatSalutCDR"]
-collection = db["finalCompositions"]
+from helper import execute_query
 
 # Construir la consulta
 query = {
@@ -38,11 +29,4 @@ query = {
     }
 }
 
-# Ejecutar la consulta y medir el tiempo
-start_time = time.time()
-results = list(collection.find(query))
-elapsed_time = time.time() - start_time
-
-# Mostrar resultados
-print(f"Se obtuvieron {len(results)} documentos")
-print(f"La consulta tomó {elapsed_time:.2f} segundos")
+execute_query("CatSalutCDR.finalCompositions", query)
