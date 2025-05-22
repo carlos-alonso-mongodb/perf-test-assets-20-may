@@ -7,7 +7,7 @@ client = MongoClient(uri)
 
 # Access the database and collection
 db = client["CatSalutCDR"]
-collection = db["finalSearch"]
+collection = db["finalCompositions"]
 
 # Build the query
 query = {
