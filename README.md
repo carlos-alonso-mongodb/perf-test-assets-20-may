@@ -1,4 +1,4 @@
-python -m Laboratory.query-ehrId
+python -m Laboratory.query-ehrId 
 python -m Laboratory.commonIndex-4p.query-population-15480Results
 python -m Laboratory.commonIndex-flat.query-population-15480Results
 python -m Laboratory.commonIndex-4p.queryPopulation-1result
