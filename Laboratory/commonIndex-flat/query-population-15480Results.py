@@ -106,7 +106,7 @@ filters = [
                                 "compound": {
                                     "filter": [
                                         {"equals": {"path": "sn.d.ani", "value": 240000}},
-                                        {"equals": {"path": "sn.as", "value": "18.10000.20000.30000.19"}},
+                                        {"equals": {"path": "sn.as", "value": "16.17.18.10000.20000.30000.19"}},
                                         {"in": {"path": "sn.d.v.df.cs", "value": [
                                             "718-7", "62461000122102", "16676-9", "10851-4", "LL1937-3",
                                             "88186-2", "77955-3", "41216-3", "7894-9", "16925-0", "38392-7",
@@ -188,7 +188,7 @@ pipeline = [
             "index": "commonIndex-4p",
             "returnStoredSource": True,
             "compound": {
-                "filter": [ filters[1], filters[2], filters[3], filters[4] ]
+                "filter": filters
             }
         }
     },
