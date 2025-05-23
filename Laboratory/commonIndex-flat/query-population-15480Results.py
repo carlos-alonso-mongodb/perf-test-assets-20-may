@@ -187,6 +187,7 @@ pipeline = [
         "$search": {
             "index": "commonIndex-4p",
             "returnStoredSource": True,
+            "concurrent": True,
             "compound": {
                 "filter": filters
             }
