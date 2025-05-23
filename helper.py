@@ -85,6 +85,8 @@ def execute_query(ns, query):
 
     logger.info(f"{ get_query_path() }. ns: { ns }. Query took {elapsed_time_ms:.2f} ms. Documents found: {len(results)}. query: {json.dumps(query, default=JSONEncoder)}")
 
+    return results
+
 def execute_aggregation(ns, pipeline):
     connection = get_connection()
     db_name, coll_name = ns.split(".")
@@ -98,6 +100,8 @@ def execute_aggregation(ns, pipeline):
     elapsed_time_ms = (end_time - start_time) * 1000
 
     logger.info(f"{ get_query_path() }. ns: { ns }. Query took {elapsed_time_ms:.2f} ms. Documents found: {len(results)}. query: {json.dumps(pipeline, default=JSONEncoder)}")
+    return results
+
 
 def print_json(data):
     # Print the JSON data
